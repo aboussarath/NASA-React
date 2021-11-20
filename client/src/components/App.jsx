@@ -1,10 +1,12 @@
 import React from 'react';
+import Photos from './Photos.jsx';
 
 function App() {
 
   return (
     <div>
-      Hello NASA
+      <h1>Hello NASA</h1>
+      <Photos />
     </div>
   )
 }
