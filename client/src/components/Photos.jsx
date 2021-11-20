@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
-
-function Photos() {
-  const [photos, setPhotos] = useState([])
-
-  useEffect(() => {
-    axios.get(`/photos`)
-      .then((response) => {
-        setPhotos(response.data)
-      })
-      .catch((err) => err);
-  }, [])
+function Photos({ photos }) {
 
   return (
     <div className='photo-list'>
