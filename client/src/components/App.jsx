@@ -8,8 +8,9 @@ function App() {
   const [value, onChange] = useState(new Date());
 
   useEffect(() => {
-    // initialize data.txt
+
     handleDateChange(value)
+
   }, [value])
 
   let handleDateChange = (value) => {
@@ -23,6 +24,7 @@ function App() {
   }
 
   let photoList = photos.length ? <Photos photos={photos} /> : <h2>There are no photos for this day!</h2>
+
   return (
     <div>
       <h1>Mars Curiosity Rover Photos</h1>
@@ -33,7 +35,6 @@ function App() {
           value={value}
         />
       </div>
-      {/* <Photos photos={photos} /> */}
       {photoList}
     </div>
   )
