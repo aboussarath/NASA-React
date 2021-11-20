@@ -9,7 +9,7 @@ function Photos({ photos }) {
           <ul className='photo-detail' key={photo.id}>
             <li>Id: {photo.id}</li>
             <li>Camera: {photo.camera.name}</li>
-            <a href={photo.img_src} target='_blank'>Click to view image</a>
+            <a className='img-link' href={photo.img_src} target='_blank'>Click to view image</a>
           </ul>
         )
       })}
