@@ -9,24 +9,20 @@ function App() {
 
   useEffect(() => {
     // initialize data.txt
-
-    return () => {
-      handleDateChange(value)
-    }
-
+    handleDateChange(value)
   }, [value])
 
   let handleDateChange = (value) => {
     let date = value.toISOString().slice(0,10);
-    console.log(date);
 
-    axios.get(`/photos`)
+    axios.get(`/photos/${date}`)
       .then((response) => {
         setPhotos(response.data)
       })
       .catch((err) => err);
   }
 
+  let photoList = photos.length ? <Photos photos={photos} /> : <h2>There are no photos for this day!</h2>
   return (
     <div>
       <h1>Mars Curiosity Rover Photos</h1>
@@ -37,7 +33,8 @@ function App() {
           value={value}
         />
       </div>
-      <Photos photos={photos} />
+      {/* <Photos photos={photos} /> */}
+      {photoList}
     </div>
   )
 }
